@@ -1,0 +1,46 @@
+int trigPin = 8;      
+int echoPin = 7;      
+float speed = 0.0347; 
+int dist;           
+float pingTime;       
+float distinch;
+
+void setup() {
+  Serial.begin(9600);
+
+  pinMode(trigPin,OUTPUT);   
+  pinMode(echoPin,INPUT);     
+  
+  lcd.init();
+  lcd.backlight();
+  lcd.print ("CIRCUITSCHOOLS..");
+  lcd. setCursor (0, 1);
+  lcd.print ("Distance sensor");
+  
+delay(2000);
+lcd.clear();
+}
+
+void loop() {
+  digitalWrite(trigPin,LOW);
+  delayMicroseconds(20);
+  digitalWrite(trigPin,HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin,LOW);          
+  pingTime = pulseIn(echoPin,HIGH);  
+  dist = (speed*pingTime*0.5);  
+  distinch = dist/2.54;  
+  Serial.print("Distance: ");
+  Serial.print(dist); 
+  Serial.print("cms --- ");
+  Serial.print(distinch); 
+  Serial.println("inches"); 
+  lcd.setCursor(0, 0);
+  lcd.print(dist);
+  lcd.print("cms");
+  lcd.setCursor(0, 1);
+  lcd.print(distinch);
+  lcd.print("inch");
+
+delay(250);
+  }
