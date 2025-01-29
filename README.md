@@ -1,6 +1,6 @@
 # Safe Pick and Place Operation of Yaskawa Robot
 
-This project utilizes an ultrasonic distance sensor to measure the distance of objects and ensures safe pick-and-place operations for a Yaskawa robot. The code reads distance data in real-time and displays it on an LCD screen, providing feedback to the operator about object placement accuracy. It also prints the data to the serial monitor for debugging and monitoring purposes.
+This project utilizes an ultrasonic distance sensor to measure the distance of objects and ensures safe pick-and-place operations for a Yaskawa robot. The code reads distance data in real time and displays it on an LCD screen, providing feedback to the operator about object placement accuracy. It also prints the data to the serial monitor for debugging and monitoring purposes.
 
 ---
 
